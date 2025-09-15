@@ -1,0 +1,3 @@
+[submodule "2d-gaussian-splatting"]
+	path = 2d-gaussian-splatting
+	url = git://github.com/hbb1/2d-gaussian-splatting.git
