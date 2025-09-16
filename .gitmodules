@@ -7,3 +7,6 @@
 [submodule "xmem"]
 	path = xmem
 	url = https://github.com/hkchengrex/XMem.git
+[submodule "Meacap"]
+	path = Meacap
+	url = https://github.com/joeyz0z/MeaCap.git
