@@ -4,3 +4,6 @@
 [submodule "XMem"]
 	path = XMem
 	url = https://github.com/hkchengrex/XMem.git
+[submodule "xmem"]
+	path = xmem
+	url = https://github.com/hkchengrex/XMem.git
