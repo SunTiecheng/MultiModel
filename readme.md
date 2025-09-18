@@ -1,5 +1,5 @@
 # From Videos to Multi-Modal Dataset
-
+![images](figures/dataset.png)
 Author:
 - Zijun Zhou[City University of Macau]
 - Tiecheng Sun*[Great Wall Motor Company Limited]
