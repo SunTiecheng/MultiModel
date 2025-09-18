@@ -2,8 +2,8 @@
 <project version="4">
   <component name="VcsDirectoryMappings">
     <mapping directory="" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/2d-gaussian-splatting" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/Meacap" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/requirement_project/2d-gaussian-splatting" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/xmem" vcs="Git" />
   </component>
 </project>
