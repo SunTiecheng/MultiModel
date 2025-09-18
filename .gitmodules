@@ -13,3 +13,9 @@
 [submodule "requirement_project/2d-gaussian-splatting"]
 	path = requirement_project/2d-gaussian-splatting
 	url = https://github.com/hbb1/2d-gaussian-splatting.git
+[submodule "requirement_project/xmem"]
+	path = requirement_project/xmem
+	url = https://github.com/hkchengrex/XMem.git
+[submodule "requirement_project/Meacap"]
+	path = requirement_project/Meacap
+	url = https://github.com/joeyz0z/MeaCap.git
