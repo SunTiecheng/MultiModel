@@ -7,10 +7,8 @@ def copy_files_and_folders():
     current_directory = os.getcwd()
     for item in file_to_copy:
         if os.path.exists(item):
-            # 如果是文件，直接复制
             if os.path.isfile(item):
                 shutil.copy2(item, current_directory)
-            # 如果是文件夹，复制整个文件夹
             elif os.path.isdir(item):
                 destination = os.path.join(current_directory, os.path.basename(item))
                 shutil.copytree(item, destination)
@@ -21,13 +19,10 @@ def copy_files_and_folders():
        destination = "./masks"
        shutil.copytree(mask_folder, destination)
     if os.path.exists(ply_files_folder):
-       # 目标文件名
        destination_ply = os.path.join('./mesh_ply', f"{new_ply_name}.ply")
-       # 复制并重命名
        shutil.copy2(ply_files_folder, destination_ply)
 
 def delete_files_and_folders():
-    # 定义要删除的文件和文件夹路径
     files_to_delete = [
         'cameras.bin',
         'images.bin',
@@ -35,12 +30,10 @@ def delete_files_and_folders():
     folders_to_delete = ['./images', './masks', './dilate_mask']
     folders_to_clear = []
 
-    # 删除文件
     for file in files_to_delete:
         if os.path.exists(file):
             os.remove(file)
 
-    # 删除文件夹
     for folder in folders_to_clear:
         if os.path.exists(folder):
             for filename in os.listdir(folder):
@@ -53,7 +46,6 @@ def delete_files_and_folders():
                 except Exception as e:
                     print(f'Failed to delete {file_path}. Reason: {e}')
 
-    # 删除整个文件夹及其内容
     for folder in folders_to_delete:
         if os.path.exists(folder):
             shutil.rmtree(folder)
