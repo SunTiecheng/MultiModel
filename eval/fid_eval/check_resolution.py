@@ -4,7 +4,6 @@ from collections import defaultdict
 
 
 def get_image_resolutions(folder_path):
-    """获取文件夹中所有图片的分辨率统计"""
     resolutions = defaultdict(list)
     supported_formats = ('.jpg', '.jpeg', '.png', '.bmp', '.gif', '.tiff', '.webp')
 
@@ -15,16 +14,14 @@ def get_image_resolutions(folder_path):
                     res = img.size  # (width, height)
                     resolutions[res].append(filename)
             except Exception as e:
-                print(f"无法读取 {filename}: {str(e)}")
+                print(f"Unable load {filename}: {str(e)}")
     return resolutions
 
 
 def center_crop_image(image, target_size):
-    """从中心裁剪图片到目标尺寸"""
     width, height = image.size
     target_width, target_height = target_size
 
-    # 计算裁剪区域
     left = (width - target_width) // 2
     top = (height - target_height) // 2
     right = left + target_width
@@ -34,8 +31,6 @@ def center_crop_image(image, target_size):
 
 
 def parse_resolution(input_str):
-    """解析用户输入的分辨率"""
-    # 尝试多种分隔符：x, X, *, 空格, 逗号
     separators = ['x', 'X', '*', ' ', ',']
 
     for sep in separators:
@@ -50,7 +45,6 @@ def parse_resolution(input_str):
                 except ValueError:
                     continue
 
-    # 如果常见分隔符都不行，尝试提取所有数字
     numbers = []
     current_num = ""
     for char in input_str:
@@ -69,68 +63,58 @@ def parse_resolution(input_str):
 
 
 def main():
-    # 输入文件夹路径
-    folder_path = input("请输入图片文件夹路径: ").strip()
+    folder_path = input("Input path: ").strip()
 
-    # 验证路径是否存在
     if not os.path.exists(folder_path):
-        print("错误: 文件夹不存在")
+        print("Error: No such folder")
         return
 
-    # 获取分辨率统计
     resolutions = get_image_resolutions(folder_path)
 
     if not resolutions:
-        print("未找到支持的图片文件")
+        print("Pictures not find")
         return
 
-    # 显示所有分辨率
-    print("\n发现以下分辨率:")
+    print("\nResolution:")
     for i, (res, files) in enumerate(resolutions.items()):
-        print(f"{i + 1}. {res[0]} x {res[1]} - {len(files)}张图片")
+        print(f"{i + 1}. {res[0]} x {res[1]} - {len(files)} pictures")
 
-    # 获取用户输入的目标分辨率
     while True:
-        input_res = input("\n请输入目标分辨率 (例如: 800x600, 800*600 或 800 600): ").strip()
+        input_res = input("\nPlease set the target resolution(e.g. 800x600, 800*600 或 800 600): ").strip()
         target_size = parse_resolution(input_res)
 
         if target_size:
             target_width, target_height = target_size
-            print(f"设置目标分辨率: {target_width} x {target_height}")
+            print(f"Target resolution: {target_width} x {target_height}")
             break
         else:
-            print("错误: 无法识别分辨率格式。请使用类似 '800x600', '800*600' 或 '800 600' 的格式")
+            print("Error: un-recognized resolution!")
 
-    # 创建输出文件夹
     output_folder = os.path.join(folder_path, 'edited_images')
     os.makedirs(output_folder, exist_ok=True)
 
-    # 处理所有图片
     processed = skipped = 0
     for res, files in resolutions.items():
         for filename in files:
             file_path = os.path.join(folder_path, filename)
             try:
                 with Image.open(file_path) as img:
-                    # 检查原始尺寸是否足够大
                     if img.width < target_width or img.height < target_height:
-                        print(f"跳过 {filename}: 原始尺寸({img.width}x{img.height})小于目标尺寸")
+                        print(f"Skip {filename}: Original size({img.width}x{img.height})is smaller than target size")
                         skipped += 1
                         continue
 
-                    # 中心裁剪
                     cropped = center_crop_image(img, (target_width, target_height))
 
-                    # 保存图片
                     output_path = os.path.join(output_folder, filename)
                     cropped.save(output_path)
                     processed += 1
-                    print(f"已处理: {filename} ({img.width}x{img.height} → {target_width}x{target_height})")
+                    print(f"Processed: {filename} ({img.width}x{img.height} → {target_width}x{target_height})")
             except Exception as e:
-                print(f"处理 {filename} 时出错: {str(e)}")
+                print(f"{str(e)} Error when processing {filename} ")
 
-    print(f"\n处理完成! 成功处理: {processed}张, 跳过: {skipped}张")
-    print(f"裁剪后的图片已保存到: {output_folder}")
+    print(f"\nProcess Done! Processed in successfully {processed} pictures, skip: {skipped} pictures")
+    print(f"The pictures have been saved in: {output_folder}")
 
 
 if __name__ == "__main__":

@@ -27,7 +27,6 @@ def process(path, args):
 
     logger.debug(f"Processing mesh {ori_path}")
 
-    # Load the mesh using open3d
     mesh = o3d.io.read_triangle_mesh(ori_path)
 
     if not mesh.has_triangle_normals():
@@ -35,14 +34,11 @@ def process(path, args):
     if not mesh.has_vertex_normals():
         mesh.compute_vertex_normals()
 
-    # Sample points from the mesh
     pcd = mesh.sample_points_uniformly(number_of_points=args.n_samples)
 
-    # Extract sampled points and normals
     points = np.asarray(pcd.points)
     normals = np.asarray(pcd.normals)
 
-    # Create a DataFrame to store points and normals
     pc_data = pd.DataFrame(data={
         'x': points[:, 0],
         'y': points[:, 1],
@@ -52,7 +48,6 @@ def process(path, args):
         'nz': normals[:, 2]
     })
 
-    # Save to target path as a point cloud
     o3d_pcd = o3d.geometry.PointCloud()
     o3d_pcd.points = o3d.utility.Vector3dVector(pc_data[['x', 'y', 'z']].values)
     o3d_pcd.normals = o3d.utility.Vector3dVector(pc_data[['nx', 'ny', 'nz']].values)
