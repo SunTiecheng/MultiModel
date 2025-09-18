@@ -10,3 +10,6 @@
 [submodule "Meacap"]
 	path = Meacap
 	url = https://github.com/joeyz0z/MeaCap.git
+[submodule "requirement_project/2d-gaussian-splatting"]
+	path = requirement_project/2d-gaussian-splatting
+	url = https://github.com/hbb1/2d-gaussian-splatting.git
