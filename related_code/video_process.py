@@ -41,11 +41,9 @@ def extract_images(video_path, output_folder, target_frame_count=150):
 def copy_to_input_folder(output_folder):
     destination_folder = './sugar/data/input'
 
-    # 确保目标文件夹存在
     if not os.path.exists(destination_folder):
         os.makedirs(destination_folder)
 
-    # 复制源文件夹中的所有文件和文件夹到目标文件夹
     for item in os.listdir(output_folder):
         s = os.path.join(output_folder, item)
         d = os.path.join(destination_folder, item)
