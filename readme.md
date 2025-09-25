@@ -104,7 +104,7 @@ Then, use your 3D reconstruction algorithm to reconstruct.
 
 *Notice: Please change the name of the point clouds which need to be evaluated. cloudA represents the sampled point cloud, cloudB represents the reconstructed point cloud.*
 
-# Dataset demo benchmark
+# Dataset Demo Benchmark
 
 For the quantitative evaluation experiment, we used CAD models from the publicly available dataset **[Objaverse-XL](https://github.com/allenai/objaverse-xl)** as sample 3D objects, and then performed experiments using two 3D reconstruction algorithms, [DashGaussian](https://github.com/YouyuChen0207/DashGaussian) and [2DGS](https://github.com/YouyuChen0207/DashGaussian). The sample 3D objects include eight randomly selected CAD models from Objaverse-XL: Pot, Bird, Armored Crab, Dog, Cannon, Rock, Van and Bowl.
 
