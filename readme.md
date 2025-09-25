@@ -19,9 +19,14 @@ In recent years, 3D generation methods in Artificial Intelligence Generated Cont
 For the text in the multi-modal dataset, we use images as input and generate the text using image captioning method. To construct the 3D models, we first generate 3D Gaussian splatting representation via 3D reconstruction algorithms, then convert them into other formats, and apply masks to remove background regions from the reconstructed models. Additionally, to check the quality of the 3D models included in the dataset, we employ a quantitative evaluation method to verify the reconstruction accuracy. Experimental results show that our method can rapidly generate demonstrate that our method provides effectively provides high-quality data. The quantitative evaluations further confirm that the 3D models in our dataset are both realistic and of high fidelity. The data provided by our multi-modal dataset can better help address current challenges in 3D generation, particularly the shortage of realistic textures and high-quality 3D models in existing multi-modal datasets.
 
 # Multi-modal Dataset
-We have make the multi-modal dataset publicly available. You can download the multi-modal datast by this **[link](https://pan.baidu.com/s/1JSAnr_3G9Y3_8xkViZLLGA?pwd=data)**.
+We have make the multi-modal dataset publicly available. You can download the multi-modal datast by this **[LINK](https://pan.baidu.com/s/1JSAnr_3G9Y3_8xkViZLLGA?pwd=data)**.
 
 In order to further expand our multi-modal dataset, we have publicly released our multi-modal dataset and the construction code on the homepage of the project. We encouage more scholars and creators enrich our multi-modal dataset together based on our released code. If scholars or creators use our construction tools to create new multi-modal data, they can provide it to us through the e-mail. We will package, classify, and integrate the data and add it to our multi-modal dataset.
+
+## Multi-modal Data Structure
+The multi-modal data is included one-dimensional caption data, two-dimensional image data, and three-dimensional object data. The three-dimensional object data further include three different types with 3D Gaussian splatting representation, mesh, and more usual point clouds.
+
+![images](figures/data_formats.png)
 
 
 
@@ -128,5 +133,6 @@ Results of color evaluation metrics. These evaluation metrics include SSIM, PSNR
 | DashGaussian  | SSIM  | 0.9949  | 0.9959  | 0.9957  | 0.9958  | 0.9936  | 0.9935  | 0.9960  | 0.9892  |
 | DashGaussian  |  LPIPS | 0.0183  | 0.0141  | 0.00147  | 0.0153  | 0.0290  | 0.0166  | 0.0146  | 0.0553  |
 
-
+# Acknowledgements
+We would like to thank the authors and Github contributors of [2DGS](https://github.com/hbb1/2d-gaussian-splatting), [XMem](https://github.com/joeyz0z/MeaCap) and [MeaCap](https://github.com/joeyz0z/MeaCap) for making their codes publicly available that make this work possible.
 
