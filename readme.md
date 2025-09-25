@@ -1,4 +1,4 @@
-# From Videos to Multi-Modal Dataset
+# **From Videos to Multi-Modal Dataset**
 
 Zijun Zhou [City University of Macau]  Yingzhe Luo* [City University of Macau]  Tiecheng Sun* Great Wall Motor Company Limited]
 ![images](figures/dataset.png)
@@ -6,14 +6,18 @@ Zijun Zhou [City University of Macau]  Yingzhe Luo* [City University of Macau]  
 
 *Corresponding author
 
+# ✨ News
+- [Sept, 2025] Initial release of our Dataset and its constrcution method
+
+
 
 # Introduction
 
 In recent years, 3D generation methods in Artificial Intelligence Generated Content (AIGC) is popular, such as text-to-3D and image-to-3D. These methods require large-scale multi-modal datasets with the 3D modal and text or image modal aligned. However, we still lack a large number of 3D models of real scenes for training when it comes to generating realistic 3D models. To address this problem, we propose a multi-modal data construction system that only takes a single real massive video modality as input. The output multi-modal data includes aligned text, image, and 3D models. The 3D modality further includes mesh, 3D Gaussian splatting representation and point cloud.
 For the text in the multi-modal dataset, we use images as input and generate the text using image captioning method. To construct the 3D models, we first generate 3D Gaussian splatting representation via 3D reconstruction algorithms, then convert them into other formats, and apply masks to remove background regions from the reconstructed models. Additionally, to check the quality of the 3D models included in the dataset, we employ a quantitative evaluation method to verify the reconstruction accuracy. Experimental results show that our method can rapidly generate demonstrate that our method provides effectively provides high-quality data. The quantitative evaluations further confirm that the 3D models in our dataset are both realistic and of high fidelity. The data provided by our multi-modal dataset can better help address current challenges in 3D generation, particularly the shortage of realistic textures and high-quality 3D models in existing multi-modal datasets.
 
-## Multi-modal Dataset
-We have make the multi-modal dataset publicly available. You can download the multi-modal datast by this [link](https://pan.baidu.com/s/1JSAnr_3G9Y3_8xkViZLLGA?pwd=data).
+# Multi-modal Dataset
+We have make the multi-modal dataset publicly available. You can download the multi-modal datast by this **[link](https://pan.baidu.com/s/1JSAnr_3G9Y3_8xkViZLLGA?pwd=data)**.
 
 In order to further expand our multi-modal dataset, we have publicly released our multi-modal dataset and the construction code on the homepage of the project. We encouage more scholars and creators enrich our multi-modal dataset together based on our released code. If scholars or creators use our construction tools to create new multi-modal data, they can provide it to us through the e-mail. We will package, classify, and integrate the data and add it to our multi-modal dataset.
 
@@ -97,4 +101,19 @@ Then, use your 3D reconstruction algorithm to reconstruct.
     python eval.py
 
 *Notice: Please change the name of the point clouds which need to be evaluated. cloudA represents the sampled point cloud, cloudB represents the reconstructed point cloud.*
+
+# Dataset demo benchmark
+
+For the quantitative evaluation experiment, we used CAD models from the publicly available dataset **[Objaverse-XL](https://github.com/allenai/objaverse-xl)** as sample 3D objects, and then performed experiments using two 3D reconstruction algorithms, [DashGaussian](https://github.com/YouyuChen0207/DashGaussian) and [2DGS](https://github.com/YouyuChen0207/DashGaussian). The sample 3D objects include eight randomly selected CAD models from Objaverse-XL: Pot, Bird, Armored Crab, Dog, Cannon, Rock, Van and Bowl.
+
+**Geometry error**
+Results of geometry evaluation metrics. The p2p in the table means point-to-point PSNR, and p2pl means point-to-plane PSNR.
+| Methods  | Metrics  | Pot  | Bird  | Crab  | Dog  | Cannon  | Rock  | Van  | Bowl  |
+| ------------ | ------------ | ------------ | ------------ | ------------ | ------------ | ------------ | ------------ | ------------ | ------------ |
+|   |   |   |   |   |   |   |   |   |   |
+|   |   |   |   |   |   |   |   |   |   |
+|   |   |   |   |   |   |   |   |   |   |
+|   |   |   |   |   |   |   |   |   |   |
+|   |   |   |   |   |   |   |   |   |   |
+
 
