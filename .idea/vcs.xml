@@ -4,6 +4,8 @@
     <mapping directory="" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/Meacap" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/requirement_project/2d-gaussian-splatting" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/requirement_project/Meacap" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/requirement_project/xmem" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/xmem" vcs="Git" />
   </component>
 </project>

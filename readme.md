@@ -1,6 +1,6 @@
 # From Videos to Multi-Modal Dataset
 
-Zijun Zhou^a^  Yingzhe Luo*[City University of Macau]  Tiecheng Sun*[Great Wall Motor Company Limited]
+Zijun Zhou [City University of Macau]  Yingzhe Luo* [City University of Macau]  Tiecheng Sun* Great Wall Motor Company Limited]
 ![images](figures/dataset.png)
 
 
