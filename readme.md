@@ -1,6 +1,8 @@
 # **From Videos to Multi-Modal Dataset**
 
-Zijun Zhou [City University of Macau]  Yingzhe Luo* [City University of Macau]  Tiecheng Sun* Great Wall Motor Company Limited]
+Zijun Zhou [City University of Macau] 
+Yingzhe Luo* [City University of Macau] 
+Tiecheng Sun* Great Wall Motor Company Limited]
 ![images](figures/dataset.png)
 
 
@@ -110,10 +112,21 @@ For the quantitative evaluation experiment, we used CAD models from the publicly
 Results of geometry evaluation metrics. The p2p in the table means point-to-point PSNR, and p2pl means point-to-plane PSNR.
 | Methods  | Metrics  | Pot  | Bird  | Crab  | Dog  | Cannon  | Rock  | Van  | Bowl  |
 | ------------ | ------------ | ------------ | ------------ | ------------ | ------------ | ------------ | ------------ | ------------ | ------------ |
-|   |   |   |   |   |   |   |   |   |   |
-|   |   |   |   |   |   |   |   |   |   |
-|   |   |   |   |   |   |   |   |   |   |
-|   |   |   |   |   |   |   |   |   |   |
-|   |   |   |   |   |   |   |   |   |   |
+| 2DGS  | p2p(dB)  | 43.21  | 50.62  | 48.04  | 39.65  | 50.38  | 43.75  | 44.07  | 47.74  |
+| 2dGS  | p2pl(dB)  | 43.67  | 51.56  | 48.94  | 39.94  | 51.91  | 44.09  | 44.84  | 48.24  |
+| DashGaussian  | p2p(dB)  | 39.45  | 49.11  | 46.22  | 37.29  | 48.02  | 41.39  | 41.71  | 45.38  |
+| DashGaussian  | p2pl(dB)  | 39.74  | 49.89  | 47.04  | 37.44  | 49.41  | 41.59  | 42.34  | 45.74  |
+
+**Color error**
+Results of color evaluation metrics. These evaluation metrics include SSIM, PSNR, LPIPS.
+| Methods  | Metrics  | Pot  | Bird  | Crab  | Dog  | Cannon  | Rock  | Van  | Bowl  |
+| ------------ | ------------ | ------------ | ------------ | ------------ | ------------ | ------------ | ------------ | ------------ | ------------ |
+| 2DGS  | PSNR  | 35.60  | 44.85  | 43.32  | 43.41  | 43.26  | 45.22  | 43.30  | 43.54  |
+| 2DGS  | SSIM  | 0.9795  | 0.9945  | 0.9907  | 0.9965  | 0.9921  | 0.9983  | 0.9959  | 0.9905  |
+| 2DGS  | LPIPS  | 0.0353  | 0.0155  | 0.0224  | 0.0097  | 0.0251  | 0.0060  | 0.0079  | 0.0438  |
+| DashGaussian  | PSNR  | 46.84  | 50.26  | 46.35  | 46.90  | 49.16  | 44.82  | 50.87  | 47.97  |
+| DashGaussian  | SSIM  | 0.9949  | 0.9959  | 0.9957  | 0.9958  | 0.9936  | 0.9935  | 0.9960  | 0.9892  |
+| DashGaussian  |  LPIPS | 0.0183  | 0.0141  | 0.00147  | 0.0153  | 0.0290  | 0.0166  | 0.0146  | 0.0553  |
+
 
 
